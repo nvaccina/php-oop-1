@@ -15,8 +15,7 @@ class Movie{
     $this->image = $_image;
   }
 
-  public function getFullInfo(){
-    return 'Titolo: ' . $this->titolo . ' <br> Registra: ' . $this->regista . ' <br> Durata: ' . $this->durata . ' minuti'; 
-
+  public function getInfo(){
+    return 'Registra: ' . $this->regista . '<br>Genere: ' . $this->genere .'<br>Durata: ' . $this->durata . ' minuti'; 
   }
 }
