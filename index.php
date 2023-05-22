@@ -2,18 +2,17 @@
 include_once __DIR__ . "/models/Movie.php"; 
 
 $arrayFilm = [
-  new Movie('Fast And Furios', 'Rob Cohen', 'Giallo/Avventura', 106, 'img/F&F1.jpg'),
-  new Movie('2 Fast 2 Furios', 'John Singleton', 'Azione/Giallo', 108, 'img/F&F2.jpg'),
-  new Movie('The Fast and the Furious: Tokyo Drift', 'Justin Lin', 'Azione/Drammatico', 104, 'img/F&F3.jpg'),
-  new Movie('Fast & Furious - Solo parti originali', 'Justin Lin', 'Azione/Thriller', 107, 'img/F&F4.jpg'),
-  new Movie('Fast & Furious 5', 'Justin Lin', 'Avventura', 130, 'img/F&F5.jpg'),
-  new Movie('Fast & Furious 6', 'Justin Lin', 'Azione/Giallo', 130, 'img/F&F6.jpg'),
-  new Movie('Fast & Furious 7', 'James Wan', 'Azione/Avventura', 140, 'img/F&F7.jpg'),
-  new Movie('Fast & Furious 8', 'F. Gary Gray', 'Azione/Avventura', 136, 'img/F&F8.jpg'),
-  new Movie('Fast & Furious 9 - The Fast Saga', 'Justin Lin', 'Azione/Avventura', 135, 'img/F&F9.jpg'),
-  new Movie('Fast & Furios X', 'Louis Leterrier', 'Azione/Avventura', 141, 'img/F&fX.jpg'),
+  new Movie('Fast And Furios', 'Rob Cohen', new Genere('Giallo', 'Avventura'), 106, 'img/F&F1.jpg'),
+  new Movie('2 Fast 2 Furios', 'John Singleton', new Genere('Azione', 'Giallo'), 108, 'img/F&F2.jpg'),
+  new Movie('The Fast and the Furious: Tokyo Drift', 'Justin Lin', new Genere('Azione', 'Drammatico'), 104, 'img/F&F3.jpg'),
+  new Movie('Fast & Furious - Solo parti originali', 'Justin Lin', new Genere('Azione', 'Thriller'), 107, 'img/F&F4.jpg'),
+  new Movie('Fast & Furious 5', 'Justin Lin', new Genere('Avventura', ''), 130, 'img/F&F5.jpg'),
+  new Movie('Fast & Furious 6', 'Justin Lin',  new Genere('Azione', 'Giallo'), 130, 'img/F&F6.jpg'),
+  new Movie('Fast & Furious 7', 'James Wan',  new Genere('Azione', 'Avventura'), 140, 'img/F&F7.jpg'),
+  new Movie('Fast & Furious 8', 'F. Gary Gray', new Genere('Azione', 'Avventura'), 136, 'img/F&F8.jpg'),
+  new Movie('Fast & Furious 9 - The Fast Saga', 'Justin Lin', new Genere('Azione', 'Avventura'), 135, 'img/F&F9.jpg'),
+  new Movie('Fast & Furios X', 'Louis Leterrier', new Genere('Azione', 'Avventura'), 141, 'img/F&fX.jpg'),
 ]
-
 
 ?>
 
@@ -41,7 +40,8 @@ $arrayFilm = [
       <img src="<?php echo $film->image ?>" class="card-img-top" alt="<?php echo $film->titolo ?>" style="height: 400px;">
       <div class="card-body">
         <h5 class="card-title"><?php echo $film->titolo ?></h5>
-        <p class="card-text"><?php echo $film->getInfo()?></p>
+        <p class="card-text mb-0"><?php echo $film->getInfo()?></p>
+        <p class="card-text"> <?php echo $film->getGeneri()?></p>
       </div>
     </div>
 
@@ -50,7 +50,7 @@ $arrayFilm = [
   <hr class="text-white">
 </div>
 
-<footer class="py-3">
+<footer class="pb-5 pt-4">
   <div class="container text-end">
     <span class="text-white">Made by Niccolò Vaccina</span>
   </div>

@@ -9,7 +9,7 @@ class Movie{
   public $durata;
   public $image;
 
-  function __construct($_titolo, $_regista, $_genere, $_durata, $_image){
+  function __construct($_titolo, $_regista, Genere $_genere = null, $_durata, $_image){
     $this->titolo = $_titolo;
     $this->regista = $_regista;
     $this->genere = $_genere;
@@ -18,6 +18,11 @@ class Movie{
   }
 
   public function getInfo(){
-    return 'Registra: ' . $this->regista . '<br>Genere: ' . $this->genere .'<br>Durata: ' . $this->durata . ' minuti'; 
+    return 'Registra: ' . $this->regista . '<br>Durata: ' . $this->durata . ' minuti'; 
+  }
+
+  public function getGeneri(){
+    return 'Genere: ' . $this->genere->genere1 . '/' . $this->genere->genere2;
   }
 }
+
