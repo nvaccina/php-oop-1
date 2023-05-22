@@ -1,5 +1,7 @@
 <?php
 
+include __DIR__ . "/Generi.php";
+
 class Movie{
   public $titolo;
   public $regista;
