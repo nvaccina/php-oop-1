@@ -3,22 +3,20 @@
 class Movie{
   public $titolo;
   public $regista;
+  public $genere;
   public $durata;
+  public $image;
 
-  function __construct($_titolo, $_regista, $_durata){
+  function __construct($_titolo, $_regista, $_genere, $_durata, $_image){
     $this->titolo = $_titolo;
     $this->regista = $_regista;
+    $this->genere = $_genere;
     $this->durata = $_durata;
+    $this->image = $_image;
   }
 
   public function getFullInfo(){
-    return 'Titolo: ' . $this->titolo . ' - Registra: ' . $this->regista . ' - Durata: ' . $this->durata . ' minuti'; 
+    return 'Titolo: ' . $this->titolo . ' <br> Registra: ' . $this->regista . ' <br> Durata: ' . $this->durata . ' minuti'; 
 
   }
 }
-
-$FastAndFurios = new Movie('Fast And Furios', 'Rob Cohen', 106);
-$FastAndFuriosX = new Movie('Fast & Furios X', 'Louis Leterrier', 141);
-
-var_dump($FastAndFurios->getFullInfo());
-var_dump($FastAndFurios->getFullInfo());
